@@ -1,6 +1,8 @@
 # ROLL THE DICE GAME
 ## JavaScript assignment - The objective is to create a roll the dice game app in HTML, CSS and Javascript.
 
+## Start the game here
+[Click to start](https://monksedo.github.io/RollTheDiceGame/)
 ## GAME RULES:
 
 - The game has 2 players, playing in rounds
@@ -13,6 +15,15 @@
 HTML, CSS, and Javascript
 
 ## Code Snippet
+![Code block 1](assets/img/diceCode01.png)
 
-## Game Images
+## Code Snippet
+![Code block 1](assets/img/diceCode02.png)
+
+## Game Start
+![Game Start](assets/img/diceGame01.png)
+## Score
+![Game Start](assets/img/diceGame01.png)
+## Winner
+![Game Start](assets/img/diceGame01.png)
 
