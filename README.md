@@ -25,5 +25,5 @@ HTML, CSS, and Javascript
 ## Score
 ![Game Start](assets/img/diceGame02.png)
 ## Winner
-![Game Start](assets/img/diceGame02.png)
+![Game Start](assets/img/diceGame03.png)
 
