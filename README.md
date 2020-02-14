@@ -18,6 +18,7 @@ HTML, CSS, and Javascript
 [View New Version](assets/js/dicegameNew.js)
 
 ## Earlier JavaScript Code Implementation
+[View Code](assets/js/dicegame.js)
 ### Code Snippet
 ![Code block 1](assets/img/diceCode01.png)
 
