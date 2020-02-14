@@ -1,13 +1,14 @@
 ///////////////////////////////////////////////////////////////////////////
-// Roll The Dice Game
+// Roll The Dice Game - on ES6 and newer implementation
 //
 
+// Set global veriables
 let scores = [0, 0];
 let activeScore, activePlayer;
 activeScore = 0;
 activePlayer = 0;
 
-// Seclect players 
+// Seclect DOM Elements 
 const diceImage = document.querySelector('.dice');
 const player1 = document.querySelector('.player-0-panel');
 const player2 = document.querySelector('.player-1-panel');
@@ -17,7 +18,7 @@ const hold = document.querySelector('.btn-hold');
 let totalScore = document.getElementById('score-' + activePlayer);
 document.querySelector('.dice').style.display = 'none';
 
-
+// Function - rollTheDice
 const rollTheDice = () => {
   let actScore = document.getElementById('current-' + activePlayer);
 
@@ -40,9 +41,8 @@ const rollTheDice = () => {
   actScore.textContent = activeScore;
 }
 
+// Function - switch players
 const switchPlayer = () => {
-  // Reset actScore to 0
-  activeScore = 0;
 
   // Next Player
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -52,6 +52,9 @@ const switchPlayer = () => {
   // player2.classList.add('active');
   player1.classList.toggle('active');
   player2.classList.toggle('active');
+
+  // Reset activeScore to 0
+  activeScore = 0;
 
   // Change the dice display when the dice is 1
   // diceImage.style.display = 'none';
@@ -69,7 +72,7 @@ const updateTotalScore = () => {
   totalScore.textContent = scores[activePlayer];
 
   // Check total score and select winner
-  if (scores[activePlayer] >= 20) {
+  if (scores[activePlayer] >= 100) {
     // Deplay the Winner Band
     winner.textContent = 'Winner!';
 
@@ -90,6 +93,7 @@ const playAgain = () => {
   document.querySelector('#current-1').textContent = 0;
   document.querySelector('#name-0').textContent = 'Player 1';
   document.querySelector('#name-1').textContent = 'Player 2';
+  player2.classList.remove = 'active';
   player1.classList.remove = 'active';
   player1.classList.add = 'active';
   rollDice.disabled = false;
