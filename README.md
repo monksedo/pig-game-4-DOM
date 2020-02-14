@@ -17,16 +17,17 @@ HTML, CSS, and Javascript
 ## New JavaScript Verion
 [View New Version](assets/js/app.js)
 
-## Code Snippet
+## Earlier JavaScript Code Implementation
+### Code Snippet
 ![Code block 1](assets/img/diceCode01.png)
 
-## Code Snippet
+### Code Snippet
 ![Code block 1](assets/img/diceCode02.png)
 
-## Game Start
+### Game Start Screen Shots
 ![Game Start](assets/img/diceGame01.png)
-## Score
+### Score
 ![Game Start](assets/img/diceGame02.png)
-## Winner
+### Winner
 ![Game Start](assets/img/diceGame03.png)
 
