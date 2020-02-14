@@ -15,7 +15,7 @@
 HTML, CSS, and Javascript
 
 ## New JavaScript Verion
-[View New Version](assets/js/app.js)
+[View New Version](assets/js/dicegameNew.js)
 
 ## Earlier JavaScript Code Implementation
 ### Code Snippet
