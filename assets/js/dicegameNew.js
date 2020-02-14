@@ -65,6 +65,9 @@ const updateTotalScore = () => {
   let totalScore = document.getElementById('score-' + activePlayer);
   let winner = document.querySelector('#name-' + activePlayer);
 
+  // Change the dice display when the dice is 1
+  diceImage.style.display = 'none';
+
   // Add current score to totalScore
   scores[activePlayer] += activeScore;
 
@@ -93,9 +96,8 @@ const playAgain = () => {
   document.querySelector('#current-1').textContent = 0;
   document.querySelector('#name-0').textContent = 'Player 1';
   document.querySelector('#name-1').textContent = 'Player 2';
-  player2.classList.remove = 'active';
-  player1.classList.remove = 'active';
-  player1.classList.add = 'active';
+  player1.classList.remove('active');
+  player1.classList.add('active');
   rollDice.disabled = false;
   hold.disabled = false;
   scores = [0, 0];
