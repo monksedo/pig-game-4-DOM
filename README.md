@@ -14,6 +14,9 @@
 ## Technology Used
 HTML, CSS, and Javascript
 
+## New JavaScript Verion
+[View New Version](assets/js/app.js)
+
 ## Code Snippet
 ![Code block 1](assets/img/diceCode01.png)
 
