@@ -20,32 +20,36 @@ document.querySelector('.dice').style.display = 'none';
 
 // Function - rollTheDice
 const rollTheDice = () => {
-  let actScore = document.getElementById('current-' + activePlayer);
+  if (gamePlaying) {
+    let actScore = document.getElementById('current-' + activePlayer);
 
-  // Get the dice random number
-  const dice = Math.floor(Math.random() * 6) + 1;
-  console.log(dice);
+    // Get the dice random number
+    const dice = Math.floor(Math.random() * 6) + 1;
+    console.log(dice);
 
-  // Display the correct dice image
-  diceImage.style.display = 'block';
-  diceImage.src = 'assets/img/dice-' + dice + '.png';
+    // Display the correct dice image
+    diceImage.style.display = 'block';
+    diceImage.src = 'assets/img/dice-' + dice + '.png';
 
-  // Update the active score
-  if (dice !== 1) {
-    // Add Score
-    activeScore += dice;
-    // actScore.textContent = activeScore;
-  } else {
-    switchPlayer();
+    // Update the active score
+    if (dice !== 1) {
+      // Add Score
+      activeScore += dice;
+      // actScore.textContent = activeScore;
+    } else {
+      switchPlayer();
+    }
+    actScore.textContent = activeScore;
   }
-  actScore.textContent = activeScore;
-}
+};
 
 // Function - switch players
 const switchPlayer = () => {
-
   // Next Player
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+
+  // Reset activeScore to 0
+  activeScore = 0;
 
   // Change active player display
   // player1.classList.remove('active');
@@ -53,8 +57,6 @@ const switchPlayer = () => {
   player1.classList.toggle('active');
   player2.classList.toggle('active');
 
-  // Reset activeScore to 0
-  activeScore = 0;
 
   // Change the dice display when the dice is 1
   // diceImage.style.display = 'none';
@@ -62,49 +64,50 @@ const switchPlayer = () => {
 
 
 const updateTotalScore = () => {
-  let totalScore = document.getElementById('score-' + activePlayer);
-  let winner = document.querySelector('#name-' + activePlayer);
+  if (gamePlaying) {
+    let totalScore = document.getElementById('score-' + activePlayer);
+    let winner = document.querySelector('#name-' + activePlayer);
 
-  // Change the dice display when the dice is 1
-  diceImage.style.display = 'none';
+    // Change the dice display when the dice is 1
+    diceImage.style.display = 'none';
 
-  // Add current score to totalScore
-  scores[activePlayer] += activeScore;
+    // Add current score to totalScore
+    scores[activePlayer] += activeScore;
 
-  // Display the players total score.
-  totalScore.textContent = scores[activePlayer];
+    // Display the players total score.
+    totalScore.textContent = scores[activePlayer];
 
-  // Check total score and select winner
-  if (scores[activePlayer] >= 100) {
-    // Deplay the Winner Band
-    winner.textContent = 'Winner!';
-
-    // Disable roll dice and hold button
-    rollDice.disabled = true;
-    hold.disabled = true;
-  } else {
-    // Change player 
-    switchPlayer();
+    // Check total score and select winner
+    if (scores[activePlayer] >= 100) {
+      // Deplay the Winner Band
+      winner.textContent = 'Winner!';
+      gamePlaying = false;
+    } else {
+      // Change player 
+      switchPlayer();
+    }
   }
 }
 
 // Reset all game score on load or function call
-const playAgain = () => {
+const init = () => {
+  scores = [0, 0];
+  activeScore = 0;
+  gamePlaying = true;
   document.querySelector('#score-0').textContent = 0;
   document.querySelector('#score-1').textContent = 0;
   document.querySelector('#current-0').textContent = 0;
   document.querySelector('#current-1').textContent = 0;
   document.querySelector('#name-0').textContent = 'Player 1';
   document.querySelector('#name-1').textContent = 'Player 2';
+  document.querySelector('.player-0-panel').classList.remove('winner');
+  document.querySelector('.player-1-panel').classList.remove('winner');
   player1.classList.remove('active');
+  player2.classList.remove('active');
   player1.classList.add('active');
-  rollDice.disabled = false;
-  hold.disabled = false;
-  scores = [0, 0];
-  activeScore = 0;
 }
-playAgain();
+init();
 
 rollDice.addEventListener('click', rollTheDice);
 hold.addEventListener('click', updateTotalScore);
-newGame.addEventListener('click', playAgain);
+newGame.addEventListener('click', init);
