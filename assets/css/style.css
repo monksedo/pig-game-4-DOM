@@ -46,20 +46,30 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .player-score {
-    margin-top: 5rem;
     font-size: 7rem;
     font-weight: 100;
     color: #EB4D4D;
 }
 
+.player-current-box {
+    background-color: #EB4D4D;
+    color: #fff;
+    width: 15rem;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+
 .dice {
     width: 12rem;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
-    margin-bottom: 15rem;
 }
 
 .active { background-color: #f7f7f7; }
@@ -71,25 +81,11 @@ body {
     color: #EB4D4D;
 }
 
-.player-current-box {
-    background-color: #EB4D4D;
-    color: #fff;
-    /* width: 15rem;
-    height: 13rem; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-    margin-bottom: 5rem;
-}
-
 
 .player-current-label,
 .player-current-score {
     text-transform: uppercase;
     font-size: 2.5rem;
-    padding: 2rem;
     color: #e0e0e0;
 }
 
@@ -100,13 +96,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     top: 0rem;
     left: 50%;
     transform: translateX(-50%);
 }
 
 button {
-    width: 20rem;
+    width: 30rem;
     color: #555;
     background: none;
     border: none;
@@ -117,28 +114,25 @@ button {
     font-weight: 300;
     transition: background-color 0.3s, color 0.3s;
 }
+
 .btn-new { 
-    margin-top: 3rem;
-    margin-bottom: auto;
     color: #555;
     background: none;
     cursor: pointer;
+    margin-top: 3rem;
 }
 
 
 .btn-roll-hold {
+    height: 13rem;
     display: flex;
     flex-direction: column;
-    margin-bottom: 7rem;
-}
-
-.btn-hold,
-.btn-roll {
-    padding: 1rem;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
 }
     
 button:hover { font-weight: 600; }
-button:hover i { margin-right: 20px; }
+button:hover i { margin-right: 10px; }
 
 button:focus {
     outline: none;
@@ -171,6 +165,10 @@ i {
         font-size: 1.5rem;
     }
 
+    .player-current-box {
+        height: 10rem;
+        width: 12rem;
+    }
     .player-current-label,
     .player-current-score {
         font-size: 2rem;
@@ -183,6 +181,14 @@ i {
 
     .player-score {
         font-size: 5rem;
+    }
+
+    i {
+        font-size: 2rem;
+    }
+
+    .btn-roll-hold {
+        height: 10rem;
     }
 }
 
@@ -200,7 +206,16 @@ i {
     }
 
     button {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .player-current-box {
+        height: 8rem;
+        width: 10rem;
+    }
+
+    .btn-roll-hold {
+        height: 8rem;
     }
 
     .player-current-label,
@@ -215,6 +230,10 @@ i {
 
     .active .player-name::after {
     font-size: 2rem;
-}
+    }
+
+     i {
+        font-size: 1.5rem;
+    }
 
 }
