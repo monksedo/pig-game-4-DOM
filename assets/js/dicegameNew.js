@@ -25,7 +25,6 @@ const newGame = document.querySelector('.btn-new');
 const rollDice = document.querySelector('.btn-roll');
 const hold = document.querySelector('.btn-hold');
 let totalScore = document.getElementById('score-' + activePlayer);
-// document.querySelector('.dice').style.display = 'none';
 
 // Function - rollTheDice
 const rollTheDice = () => {
@@ -47,7 +46,6 @@ const rollTheDice = () => {
     } else {
       // Add Score
       activeScore += dice;
-      // actScore.textContent = activeScore;
       console.log(activeScore);
     }
     actScore.textContent = activeScore;
@@ -123,6 +121,7 @@ const init = () => {
   player1.classList.remove('active');
   player2.classList.remove('active');
   player1.classList.add('active');
+  diceImage.style.display = 'none';
 }
 init();
 
