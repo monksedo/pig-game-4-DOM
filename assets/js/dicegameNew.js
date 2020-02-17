@@ -25,7 +25,7 @@ const newGame = document.querySelector('.btn-new');
 const rollDice = document.querySelector('.btn-roll');
 const hold = document.querySelector('.btn-hold');
 let totalScore = document.getElementById('score-' + activePlayer);
-document.querySelector('.dice').style.display = 'none';
+// document.querySelector('.dice').style.display = 'none';
 
 // Function - rollTheDice
 const rollTheDice = () => {
@@ -111,6 +111,7 @@ const init = () => {
   scores = [0, 0];
   activeScore = 0;
   gamePlaying = true;
+  activePlayer === 0 ? activePlayer = 0 : activePlayer = 0;
   document.querySelector('#score-0').textContent = 0;
   document.querySelector('#score-1').textContent = 0;
   document.querySelector('#current-0').textContent = 0;

@@ -27,13 +27,13 @@ body {
     margin: 5rem auto;
     display: flex;
     width: 90%;
-    height: 50rem;
+    height: 60rem;
     background-color: #fff;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 }
 
 .player-name {
-    margin-top: 5rem;
+    margin-top: 6rem;
     font-size: 5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -56,7 +56,7 @@ body {
 }
 
 .dice {
-    width: 10rem;
+    width: 12rem;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
     margin-bottom: 5rem;
 }
@@ -73,8 +73,8 @@ body {
 .player-current-box {
     background-color: #EB4D4D;
     color: #fff;
-    width: 15rem;
-    height: 13rem;
+    /* width: 15rem;
+    height: 13rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,13 +88,9 @@ body {
 .player-current-score {
     text-transform: uppercase;
     font-size: 2.5rem;
-    line-height: 1;
+    padding: 2rem;
     color: #e0e0e0;
 }
-/* 
-.player-current-score {
-    font-size: 2rem;
-} */
 
 
 .game-control {
@@ -114,19 +110,18 @@ button {
     background: none;
     border: none;
     font-family: Lato;
-    font-size: 20px;
+    font-size: 2rem;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 300;
     transition: background-color 0.3s, color 0.3s;
 }
 .btn-new { 
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: auto;
     color: #555;
     background: none;
     cursor: pointer;
-    font-family: Lato;
 }
 
 
@@ -162,17 +157,63 @@ i {
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
 
+ @media screen and (max-width: 800px) {
+     .wrapper {
+         height: 50rem;
+     }
 
-///////////////////////////////////////////////////////////////////
-// Media Queries
-//
+    .player-name {
+        font-size: 4rem;
+    }
 
-@media screen and (min-width: 900px) {
-  div.player-name {
-    font-size: 4rem;
-  }
+    button {
+        font-size: 1.5rem;
+    }
 
-  div.player-score {
-      font-size: 4rem;
-  }
+    .player-current-label,
+    .player-current-score {
+        font-size: 2rem;
+        padding: 1.5rem;
+    }
+
+    .dice {
+        width: 7rem;
+    }
+
+    .player-score {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+         height: 40rem;
+     }
+
+    .player-score {
+        font-size: 4rem;
+    }
+
+    .player-name {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
+
+    .player-current-label,
+    .player-current-score {
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+
+    .dice {
+        width: 6rem;
+    }
+
+    .active .player-name::after {
+    font-size: 2rem;
+}
+
 }
