@@ -42,13 +42,13 @@ const rollTheDice = () => {
     diceImage.src = 'assets/img/dice-' + dice + '.png';
 
     // Update the active score
-    if (dice !== 1) {
+    if (dice === 1) {
+      switchPlayer();
+    } else {
       // Add Score
       activeScore += dice;
       // actScore.textContent = activeScore;
       console.log(activeScore);
-    } else {
-      switchPlayer();
     }
     actScore.textContent = activeScore;
   }
@@ -59,7 +59,7 @@ const rollTheDice = () => {
 const updateTotalScore = () => {
   if (gamePlaying) {
     let totalScore = document.getElementById('score-' + activePlayer);
-    let winner = document.querySelector('#name-' + activePlayer);
+    let winner = document.getElementById('name-' + activePlayer);
 
     // Change the dice display when the dice is 1
     diceImage.style.display = 'none';
