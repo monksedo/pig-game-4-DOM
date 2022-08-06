@@ -12,7 +12,7 @@ JavaScript assignment - The objective is to create a roll the dice game app in H
 
 ### Start the game here
 
-[Click to start](https://cnwebdev.github.io/rollthedice/)
+[Click to start](https://tvn9.github.io/rollthedice/)
 
 ## Technology Used
 
